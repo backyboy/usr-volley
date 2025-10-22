@@ -31,7 +31,7 @@ const crumbs = computed(() => {
 </script>
 
 <template>
-  <nav v-if="!isHome" class="bg-gray-50 border-b border-gray-200 py-2">
+  <nav v-if="!isHome" class="relative z-10 bg-gray-50 border-b border-gray-200 py-2">
     <ol class="mx-auto max-w-7xl px-4 flex items-center gap-2 text-sm text-gray-600">
       <li>
         <RouterLink class="hover:text-gray-900" to="/">Accueil</RouterLink>

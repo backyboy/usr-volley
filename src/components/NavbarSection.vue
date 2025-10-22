@@ -1,5 +1,5 @@
 <template>
-    <Disclosure as="nav" class="relative isolate overflow-hidden bg-gray-900 border-b border-white/10"
+    <Disclosure as="nav" class="relative z-20 isolate overflow-hidden bg-gray-900 border-b border-white/10"
         v-slot="{ open }">
         <!-- Gradient overlays borrowed from AboutSection -->
         <div aria-hidden="true" class="absolute inset-0 -z-10 overflow-hidden">
