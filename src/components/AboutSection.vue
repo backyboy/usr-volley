@@ -20,47 +20,65 @@ const teams: Team[] = [
 </script>
 
 <template>
-  <section id="club" class="mx-auto max-w-7xl px-4 py-8">
-    <header class="relative overflow-clip rounded-xl border border-black/5 bg-linear-to-b from-violet-50 to-white">
-      <div class="relative z-10 p-6 md:p-8">
-        <p class="uppercase tracking-wider text-xs text-violet-700 mb-1">Le club</p>
-        <h2 class="text-2xl md:text-3xl font-semibold leading-tight">Union Sportive Renaudine — Volley-Ball</h2>
-        <p class="m-0 text-gray-600">
+  <section id="club" class="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24">
+    <!-- Gradient overlays -->
+    <div aria-hidden="true" class="absolute inset-0 -z-10 overflow-hidden">
+      <div
+        class="pointer-events-none absolute -top-24 -left-24 size-144 rounded-full bg-linear-to-tr from-violet-500/30 via-fuchsia-500/20 to-pink-500/10 blur-3xl">
+      </div>
+      <div
+        class="pointer-events-none absolute -bottom-28 -right-24 size-128 rounded-full bg-linear-to-tr from-indigo-500/20 via-violet-500/20 to-transparent blur-3xl">
+      </div>
+    </div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:mx-0">
+        <p class="uppercase tracking-wider text-xs text-violet-300 mb-2">Le club</p>
+        <h2 class="text-4xl sm:text-5xl font-semibold text-white leading-tight">Union Sportive Renaudine — Volley-Ball
+        </h2>
+        <p class="mt-3 text-lg/8 text-gray-300">
           Équipes senior engagées dans le
-          <a class="underline underline-offset-2 text-violet-700 hover:text-violet-800"
+          <a class="underline underline-offset-2 text-violet-300 hover:text-white"
             href="https://volley37-ufolep-fsgt.fr/" target="_blank" rel="noopener nofollow">championnat UFOLEP</a>
           d'Indre-et-Loire.
         </p>
       </div>
-    </header>
 
-    <div class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-      <aside class="rounded-xl border border-black/5 bg-linear-to-b from-violet-50 to-white p-4 shadow-sm"
-        aria-labelledby="a-propos-titre">
-        <h3 id="a-propos-titre" class="text-lg font-semibold mb-1">À propos du club</h3>
-        <p class="text-gray-600 mb-2">
-          Club convivial basé à Château-Renault. Entraînements hebdomadaires, compétitions
-          UFOLEP et accueil des nouveaux joueuses et joueurs.
-        </p>
-        <ul class="flex flex-wrap gap-x-4 gap-y-3 text-sm list-disc pl-5 m-0">
-          <li>Mardi 19:30 – 22:30</li>
-          <li>Vendredi 20:00 – 23:00</li>
-        </ul>
-      </aside>
-      <article v-for="team in teams" :key="team.id"
-        class="rounded-xl border border-black/5 bg-white p-4 shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-lg">
-        <header class="mb-1">
-          <h3 class="text-lg font-semibold">{{ team.name }}</h3>
-        </header>
-        <p class="text-gray-600 mb-3">
-          Suivez les résultats, le calendrier des rencontres et le classement.
-        </p>
-        <p class="mt-auto">
-          <a class="inline-block rounded-lg px-4 py-2 font-semibold text-white bg-violet-600 hover:bg-violet-700"
-            :href="team.link" target="_blank" rel="noopener nofollow"
-            :aria-label="`Voir les résultats de ${team.name} (nouvelle fenêtre)`">Voir les résultats</a>
-        </p>
-      </article>
+      <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-6 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        <aside class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 shadow-sm" aria-labelledby="a-propos-titre">
+          <div class="flex items-center gap-3">
+            <span
+              class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-violet-600/20 text-violet-300">ℹ️</span>
+            <h3 id="a-propos-titre" class="text-white text-lg font-semibold">À propos du club</h3>
+          </div>
+          <p class="mt-3 text-gray-300">
+            Club convivial basé à Château-Renault. Entraînements hebdomadaires, compétitions UFOLEP et accueil des
+            nouveaux joueuses et joueurs.
+          </p>
+          <ul class="mt-3 space-y-1 text-sm text-gray-300 list-disc pl-5">
+            <li>Mardi 19:30 – 22:30</li>
+            <li>Vendredi 20:00 – 23:00</li>
+          </ul>
+        </aside>
+
+        <article v-for="team in teams" :key="team.id"
+          class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 shadow-sm transition-colors hover:bg-white/10">
+          <div class="flex items-center gap-3">
+            <span
+              class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-violet-600/20 text-violet-300">🏐</span>
+            <h3 class="text-white text-lg font-semibold">{{ team.name }}</h3>
+          </div>
+          <p class="mt-3 text-gray-300">
+            Suivez les résultats, le calendrier des rencontres et le classement.
+          </p>
+          <p class="mt-4">
+            <a class="inline-block rounded-lg px-4 py-2 font-semibold text-white bg-violet-600 hover:bg-violet-700"
+              :href="team.link" target="_blank" rel="noopener nofollow"
+              :aria-label="`Voir les résultats de ${team.name} (nouvelle fenêtre)`">
+              Voir les résultats
+            </a>
+          </p>
+        </article>
+      </div>
     </div>
   </section>
 

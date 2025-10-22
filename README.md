@@ -6,7 +6,7 @@ Page d’accueil avec:
 - Présentation du club et des collectifs
 - Lien vers le championnat UFOLEP 37
 - Infos pratiques (entraînements, rejoindre le club)
-- Formulaire de contact (ouvre votre messagerie via mailto)
+- Formulaire de contact (envoi configurable, fallback mailto)
 
 ## Recommended IDE Setup
 
@@ -52,3 +52,20 @@ npm run build
 ```sh
 npm run lint
 ```
+
+## Formulaire de contact – Envoi
+
+Par défaut, le bouton “Envoyer” ouvre votre client mail (`mailto:`).
+
+Vous pouvez activer un envoi direct (via `fetch POST`) en définissant un endpoint dans un fichier `.env.local` à la racine:
+
+```
+# Adresse de réception par défaut pour le fallback mailto
+VITE_CONTACT_EMAIL=contact@exemple.com
+
+# Endpoint externe (ex: Formspree, Getform, serveur perso)
+VITE_CONTACT_FORM_ENDPOINT=https://formspree.io/f/xxxxxxx
+```
+
+Si `VITE_CONTACT_FORM_ENDPOINT` est défini, le formulaire poste les champs suivants:
+`first-name`, `last-name`, `email`, `phone-number`, `message`.
