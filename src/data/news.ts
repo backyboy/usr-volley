@@ -4,6 +4,8 @@ export type NewsItem = {
   date: string // ISO YYYY-MM-DD
   excerpt: string
   body: string[]
+  image: string
+  imageAlt?: string
 }
 
 export const news: NewsItem[] = [
@@ -19,6 +21,7 @@ export const news: NewsItem[] = [
       "Contreparties: présence du logo sur nos supports, mention dans nos publications et possibilité d'actions locales communes.",
       "Intéressé(e) ? Contactez le bureau pour recevoir le dossier de sponsoring: guillaume.noinville@wanadoo.fr",
     ],
+    image: '/icon.jpg',
+    imageAlt: 'Illustration sponsoring USR Volley',
   },
 ]
-
