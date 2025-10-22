@@ -10,6 +10,30 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    id: '2025-10-22-article-ufolep-792',
+    title: 'UFOLEP 37 — Début de la saison 2025-2026',
+    date: '2025-10-22',
+    excerpt: "Consultez l’article relayé par UFOLEP 37 sur leur site.",
+    body: [
+      'Retrouvez l’article complet sur le site UFOLEP 37.',
+      'Lien: https://volley37-ufolep-fsgt.fr/?p=792',
+    ],
+    image: '/icon.jpg',
+    imageAlt: "Lien vers l’article UFOLEP 37",
+  },
+  {
+    id: '2025-10-22-reseaux-sociaux',
+    title: 'Bientôt: comptes officiels sur les réseaux sociaux',
+    date: '2025-10-22',
+    excerpt: 'De nouveaux comptes pour suivre nos équipes arrivent prochainement.',
+    body: [
+      "Nous finalisons l’ouverture de comptes officiels afin de suivre les résultats, photos et infos des équipes.",
+      'Nous communiquerons très bientôt les liens pour vous abonner.',
+    ],
+    image: '/icon.jpg',
+    imageAlt: 'Annonces réseaux sociaux USR Volley',
+  },
+  {
     id: '2025-10-20-sponsoring-banniere',
     title: "Appel au sponsoring — bannière publicitaire au gymnase",
     date: '2025-10-20',

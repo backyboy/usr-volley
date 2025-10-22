@@ -64,12 +64,12 @@ function onSubmit(e: Event) {
         <ul class="mt-2 space-y-2">
           <li><strong>Email :</strong> guillaume.noinville@wanadoo.fr</li>
           <li>
-            <strong>Téléphone :</strong>
+            <strong>Téléphone: </strong>
             <template v-if="isMobile">
-              <a class="text-violet-700 hover:text-violet-800" href="tel:+33682580684">06 82 58 06 84</a>
+              <a class="text-violet-700 hover:text-violet-800" href="tel:+33682580684">0682580684</a>
             </template>
             <template v-else>
-              06 82 58 06 84
+              0682580684
             </template>
           </li>
         </ul>

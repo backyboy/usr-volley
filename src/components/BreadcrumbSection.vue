@@ -32,15 +32,11 @@ const crumbs = computed(() => {
 
 <template>
   <nav v-if="!isHome" class="bg-gray-50 border-b border-gray-200 py-2">
-    <ol class="mx-auto max-w-screen-xl px-4 flex items-center gap-2 text-sm text-gray-600">
+    <ol class="mx-auto max-w-7xl px-4 flex items-center gap-2 text-sm text-gray-600">
       <li>
         <RouterLink class="hover:text-gray-900" to="/">Accueil</RouterLink>
       </li>
-      <li
-        v-for="(c, idx) in crumbs.slice(1)"
-        :key="idx"
-        class="flex items-center gap-2"
-      >
+      <li v-for="(c, idx) in crumbs.slice(1)" :key="idx" class="flex items-center gap-2">
         <span class="text-gray-400">/</span>
         <span v-if="c.to">
           <RouterLink class="hover:text-gray-900" :to="c.to">{{ c.label }}</RouterLink>
@@ -50,4 +46,3 @@ const crumbs = computed(() => {
     </ol>
   </nav>
 </template>
-
