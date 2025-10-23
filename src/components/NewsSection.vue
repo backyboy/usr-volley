@@ -16,7 +16,7 @@ const latest = allNews.slice(0, 3)
         <h2 class="text-4xl font-semibold tracking-tight text-pretty  sm:text-5xl">Actualités</h2>
         <p class="mt-2 text-lg/8 ">Découvrez les dernières annonces du club.</p>
       </div>
-      <div
+      <div v-if="latest.length"
         class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-700 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
         <article v-for="item in latest" :key="item.id" class="flex max-w-xl flex-col items-start justify-between">
           <div class="w-full">
@@ -36,19 +36,30 @@ const latest = allNews.slice(0, 3)
           </div>
 
           <div class="group relative grow">
-            <h3 class="mt-3 text-lg/6 font-semibold  group-hover:">
-              <a href="/actualites">
+            <h3 class="mt-3 text-lg/6 font-semibold group-hover:">
+              <RouterLink :to="{ name: 'news-article', params: { id: item.id } }">
                 <span class="absolute inset-0"></span>
                 {{ item.title }}
-              </a>
+              </RouterLink>
             </h3>
             <p class="mt-3 line-clamp-3 text-sm/6 ">{{ item.excerpt }}</p>
+            <RouterLink class="mt-4 inline-flex items-center gap-1 font-semibold text-violet-600 hover:text-violet-700"
+              :to="{ name: 'news-article', params: { id: item.id } }">
+              Lire l’article
+              <span aria-hidden>→</span>
+            </RouterLink>
           </div>
         </article>
       </div>
+      <p v-else class="mx-auto mt-10 max-w-2xl border-t border-gray-700 pt-10 sm:mt-16 sm:pt-16">
+        Aucun article n’est disponible pour le moment. De nouveaux articles arrivent bientôt.
+      </p>
       <div class="mt-10 sm:mt-12 flex justify-center">
-        <a class="inline-block rounded-lg px-4 py-2 font-semibold  bg-violet-600 hover:bg-violet-700"
-          href="/actualites">Voir toutes les actualités</a>
+        <RouterLink
+          class="inline-block rounded-lg px-4 py-2 font-semibold  bg-violet-600 hover:bg-violet-700 text-white"
+          :to="{ name: 'news' }">
+          Voir toutes les actualités
+        </RouterLink>
       </div>
     </div>
   </section>

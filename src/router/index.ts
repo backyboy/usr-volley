@@ -16,6 +16,12 @@ const router = createRouter({
       component: () => import('../views/NewsView.vue'),
     },
     {
+      path: '/actualites/:id',
+      name: 'news-article',
+      meta: { breadcrumb: 'Article' },
+      component: () => import('../views/NewsArticleView.vue'),
+    },
+    {
       path: '/contact',
       name: 'contact',
       meta: { breadcrumb: 'Contact' },
